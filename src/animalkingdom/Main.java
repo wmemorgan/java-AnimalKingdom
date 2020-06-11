@@ -16,7 +16,7 @@ public class Main {
 
         filterList filterAnimals = (CheckAnimal tester) -> {
             filteredList.clear();
-            for (Animal a: animals) {
+            for (Animal a : animals) {
                 if (tester.test(a)) {
                     filteredList.add(a);
                 }
@@ -90,6 +90,28 @@ public class Main {
         System.out.println("\n*** List all the animals in order by how they move ***");
         animals.sort((a1, a2) -> a1.move().compareToIgnoreCase(a2.move()));
         System.out.println(animals);
+
+        // Filtering
+        System.out.println("\n*** List only animals that breath with lungs ***");
+        filterAnimals.run(a -> a.breath().equals("lungs"));
+        filteredList.forEach((a) -> System.out
+                .println(a.name + " " + a.reproduce() + " " + a.move() + " " + a.breath() + " " + a.year));
+
+        System.out.println("\n*** List only animals that breath with lungs and were named in 1758 ***");
+        filterAnimals.run(a -> (a.breath().equals("lungs")) && (a.getYear() == 1758));
+        filteredList.forEach((a) -> System.out
+                .println(a.name + " " + a.reproduce() + " " + a.move() + " " + a.breath() + " " + a.year));
+
+        System.out.println("\n*** List only animals that lay eggs and breath with lungs ***");
+        filterAnimals.run(a -> (a.reproduce().equals("eggs")) && (a.breath().equals("lungs")));
+        filteredList.forEach((a) -> System.out
+                .println(a.name + " " + a.reproduce() + " " + a.move() + " " + a.breath() + " " + a.year));
+
+        System.out.println("\n*** List alphabetically animals that were named in 1758 ***");
+        filterAnimals.run(a -> a.getYear() == 1758);
+        filteredList.sort((a1, a2) -> a1.name.compareToIgnoreCase(a2.name));
+        filteredList.forEach((a) -> System.out
+                .println(a.name + " " + a.reproduce() + " " + a.move() + " " + a.breath() + " " + a.year));
     }
 
 }

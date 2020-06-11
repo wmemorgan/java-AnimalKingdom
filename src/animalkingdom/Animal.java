@@ -14,7 +14,27 @@ abstract class Animal {
         this.year = year;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
     String eat() {
         return "Eat";
+    }
+
+    @Override
+    // public String toString() {
+    //     return "id: " + id + " name: " + name + " year named: " + year;
+    // }
+    public String toString() {
+        return "Animals{id=" + id + ", name=" + "'" + name + "'" + ", yearNamed=" + year + "}";
     }
 }

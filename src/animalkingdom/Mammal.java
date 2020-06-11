@@ -19,10 +19,4 @@ public class Mammal extends Animal implements Behavior {
     public String reproduce() {
         return "live births";
     }
-
-    @Override
-    public String toString() {
-        return "id: " + id + " name: " + name + " year named: " + year;
-    }
-
 }

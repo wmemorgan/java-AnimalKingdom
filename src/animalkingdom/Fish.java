@@ -20,9 +20,4 @@ public class Fish extends Animal implements Behavior {
     public String reproduce() {
         return "egs";
     }
-
-    @Override
-    public String toString() {
-        return "id: " + id + " name: " + name + " year named: " + year;
-    }
 }

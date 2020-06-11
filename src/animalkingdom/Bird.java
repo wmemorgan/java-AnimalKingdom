@@ -19,10 +19,5 @@ public class Bird extends Animal implements Behavior {
     @Override
     public String reproduce() {
         return "egs";
-    }
-
-    @Override
-    public String toString() {
-        return "id: " + id + " name: " + name + " year named: " + year;
-    }    
+    } 
 }

@@ -1,8 +1,8 @@
 package animalkingdom;
 
-public class Birds extends Animal implements Behavior {
+public class Bird extends Animal implements Behavior {
 
-    public Birds(String name, int year) {
+    public Bird(String name, int year) {
         super(name, year);
     }
 

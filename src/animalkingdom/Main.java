@@ -9,8 +9,7 @@ public class Main {
         void run(CheckAnimal tester);
     }
 
-    public static void main(String[] args) {
-        System.out.println("*** Welcome to Cafe Morgan's Animal Kingdom ***");
+    private static void runAnimalKingdom() {
         List<Animal> animals = new ArrayList<>();
         List<Animal> filteredList = new ArrayList<>();
 
@@ -112,6 +111,11 @@ public class Main {
         filteredList.sort((a1, a2) -> a1.name.compareToIgnoreCase(a2.name));
         filteredList.forEach((a) -> System.out
                 .println(a.name + " " + a.reproduce() + " " + a.move() + " " + a.breath() + " " + a.year));
+    }
+
+    public static void main(String[] args) {
+        System.out.println("*** Welcome to Cafe Morgan's Animal Kingdom ***");
+        runAnimalKingdom();
     }
 
 }

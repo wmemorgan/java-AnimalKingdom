@@ -18,6 +18,6 @@ public class Fish extends Animal implements Behavior {
 
     @Override
     public String reproduce() {
-        return "egs";
+        return "eggs";
     }
 }

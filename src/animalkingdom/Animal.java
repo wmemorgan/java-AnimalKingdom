@@ -1,7 +1,7 @@
 package animalkingdom;
 
 abstract class Animal {
-    protected int maxId = 0;
+    protected static int maxId = 0;
 
     protected int id;
     protected String name;

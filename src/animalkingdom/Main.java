@@ -5,23 +5,20 @@ import java.util.List;
 
 public class Main {
 
-    interface filterList {
-        void run(CheckAnimal tester);
-    }
+    private static List<Animal> filteredList = new ArrayList<>();
+    private static List<Animal> animals = new ArrayList<>();
+
+    // Filter method
+    private static void filterAnimals(List<Animal> originalList, CheckAnimal tester) {
+        filteredList.clear();
+        for (Animal a : originalList) {
+            if (tester.test(a)) {
+                filteredList.add(a);
+            }
+        }
+    };
 
     private static void runAnimalKingdom() {
-        List<Animal> animals = new ArrayList<>();
-        List<Animal> filteredList = new ArrayList<>();
-
-        filterList filterAnimals = (CheckAnimal tester) -> {
-            filteredList.clear();
-            for (Animal a : animals) {
-                if (tester.test(a)) {
-                    filteredList.add(a);
-                }
-            }
-        };
-
         // Instantiate Mammals
         System.out.println("Bring in the Mammals");
         Mammal panda = new Mammal("Panda", 1869);
@@ -40,8 +37,6 @@ public class Main {
         animals.add(armadillo);
         animals.add(racoon);
         animals.add(bigfoot);
-        // System.out.println("Added mammals to the list: ");
-        // System.out.println(animals);
 
         // Instantiate Birds
         System.out.println("Bring in the Birds");
@@ -57,8 +52,6 @@ public class Main {
         animals.add(toucan);
         animals.add(parrot);
         animals.add(swan);
-        // System.out.println("Added birds to the list: ");
-        // System.out.println(animals);
 
         // Instantiate Fish
         System.out.println("Bring in the Fish");
@@ -70,11 +63,9 @@ public class Main {
         animals.add(salmon);
         animals.add(catfish);
         animals.add(perch);
-        // System.out.println("Added fish to the list: ");
-        // System.out.println(animals);
 
         System.out.println("\n\n*** MVP ***\n");
-        // ===== Sorting =====//
+        //===== Sorting =====//
         // List animals in descending order by year named
         System.out.println("\n*** List all the animals in descending order by year named ***");
         animals.sort((a1, a2) -> a2.getYear() - a1.getYear());
@@ -90,24 +81,24 @@ public class Main {
         animals.sort((a1, a2) -> a1.move().compareToIgnoreCase(a2.move()));
         System.out.println(animals);
 
-        // Filtering
+        // ===== Filtering =====//
         System.out.println("\n*** List only animals that breath with lungs ***");
-        filterAnimals.run(a -> a.breath().equals("lungs"));
+        filterAnimals(animals, a -> a.breath().equals("lungs"));
         filteredList.forEach((a) -> System.out
                 .println(a.name + " " + a.reproduce() + " " + a.move() + " " + a.breath() + " " + a.year));
 
         System.out.println("\n*** List only animals that breath with lungs and were named in 1758 ***");
-        filterAnimals.run(a -> (a.breath().equals("lungs")) && (a.getYear() == 1758));
+        filterAnimals(animals, a -> (a.breath().equals("lungs")) && (a.getYear() == 1758));
         filteredList.forEach((a) -> System.out
                 .println(a.name + " " + a.reproduce() + " " + a.move() + " " + a.breath() + " " + a.year));
 
         System.out.println("\n*** List only animals that lay eggs and breath with lungs ***");
-        filterAnimals.run(a -> (a.reproduce().equals("eggs")) && (a.breath().equals("lungs")));
+        filterAnimals(animals, a -> (a.reproduce().equals("eggs")) && (a.breath().equals("lungs")));
         filteredList.forEach((a) -> System.out
                 .println(a.name + " " + a.reproduce() + " " + a.move() + " " + a.breath() + " " + a.year));
 
         System.out.println("\n*** List alphabetically animals that were named in 1758 ***");
-        filterAnimals.run(a -> a.getYear() == 1758);
+        filterAnimals(animals, a -> a.getYear() == 1758);
         filteredList.sort((a1, a2) -> a1.name.compareToIgnoreCase(a2.name));
         filteredList.forEach((a) -> System.out
                 .println(a.name + " " + a.reproduce() + " " + a.move() + " " + a.breath() + " " + a.year));

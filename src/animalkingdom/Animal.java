@@ -1,7 +1,7 @@
 package animalkingdom;
 
 abstract class Animal {
-    protected static int maxId = 0;
+    protected static int maxId = -1;
 
     protected int id;
     protected String name;
@@ -25,6 +25,8 @@ abstract class Animal {
     public int getYear() {
         return year;
     }
+
+    abstract String move();
 
     String eat() {
         return "Eat";

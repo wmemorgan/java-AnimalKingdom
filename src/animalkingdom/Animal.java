@@ -28,13 +28,17 @@ abstract class Animal {
 
     abstract String move();
 
+    abstract String breath();
+
+    abstract String reproduce();
+
     String eat() {
         return "Eat";
     }
 
     @Override
     // public String toString() {
-    //     return "id: " + id + " name: " + name + " year named: " + year;
+    // return "id: " + id + " name: " + name + " year named: " + year;
     // }
     public String toString() {
         return "Animals{id=" + id + ", name=" + "'" + name + "'" + ", yearNamed=" + year + "}";

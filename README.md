@@ -185,3 +185,42 @@ Raccoon live births walk lungs 1758
 Sloth live births walk lungs 1804
 Zebra live births walk lungs 1778
 ```
+
+### Algorithm
+#### MVP
+- [ ] Create abstract class for animals
+  - [ ] Define fields
+  - [ ] Define constructor
+  - [ ] Define abstract method
+- [ ] Create interface for behavior
+  - [ ] Declare methods:
+    - [ ] move
+    - [ ] breath
+    - [ ] reproduce
+  - [ ] Create classes for animal categories
+  - [ ] Customize interface methods
+  - [ ] Define custom toString() method
+    - [ ] Mammals
+    - [ ] Birds
+    - [ ] Fish
+  - [ ] Automate/streamline creation of classes and subclasses
+
+##### Sorting and Filtering
+- [ ] Create a sorting method
+  - [ ] Uses lambda expression as an argument
+  - Lambda expression criteria:
+    - [ ] year named (descending)
+    - [ ] alphabetically
+    - [ ] movement
+  - [ ] Create a filtering method
+    - [ ] Uses lambda expression as an argument
+    - Lambda expression criteria:
+      - [ ] breath with lungs
+      - [ ] breath with lungs named in 1758
+      - [ ] lay eggs and breath with lungs
+  - [ ] Implement filtering and sorting
+      - [ ] alphabetically named in 1758
+
+#### Stretch (Optional)
+- [ ] Implement filtering and sorting
+    - [ ] filter mammals sorted alphabetically

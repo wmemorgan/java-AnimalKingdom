@@ -4,9 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    
-    private static void runAnimalKingdom() {
+
+    interface filterList {
+        void run(CheckAnimal tester);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("*** Welcome to Cafe Morgan's Animal Kingdom ***");
         List<Animal> animals = new ArrayList<>();
+        List<Animal> filteredList = new ArrayList<>();
+
+        filterList filterAnimals = (CheckAnimal tester) -> {
+            filteredList.clear();
+            for (Animal a: animals) {
+                if (tester.test(a)) {
+                    filteredList.add(a);
+                }
+            }
+        };
 
         // Instantiate Mammals
         System.out.println("Bring in the Mammals");
@@ -60,28 +75,21 @@ public class Main {
         // System.out.println(animals);
 
         System.out.println("\n\n*** MVP ***\n");
-        //===== Sorting =====//
+        // ===== Sorting =====//
         // List animals in descending order by year named
         System.out.println("\n*** List all the animals in descending order by year named ***");
         animals.sort((a1, a2) -> a2.getYear() - a1.getYear());
         System.out.println(animals);
-        
+
         // List animals alphabetically
         System.out.println("\n*** List all the animals alphabetically ***");
         animals.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
         System.out.println(animals);
-        
+
         // List animals in descending order by year named
         System.out.println("\n*** List all the animals in order by how they move ***");
         animals.sort((a1, a2) -> a1.move().compareToIgnoreCase(a2.move()));
         System.out.println(animals);
     }
-
-    public static void main(String[] args) {
-        System.out.println("*** Welcome to Cafe Morgan's Animal Kingdom ***");
-        runAnimalKingdom();
-    }
-
-
 
 }

@@ -12,23 +12,23 @@ Using a combination of abstract classes and lambda expressions, students will cr
 ## Instruction
 
 * [X] Please fork and clone this repository. This repository does not have a starter project, so create one inside of the cloned repository folder. Regularly commit and push your code as appropriate.
-* [ ] Create an abstract class for animals
-  * [ ] All animals consume food the same way
-  * [ ] Each animal is assigned a unique number, a name, and year discovered regardless of classification.
+* [x] Create an abstract class for animals
+  * [x] All animals consume food the same way
+  * [x] Each animal is assigned a unique number, a name, and year discovered regardless of classification.
 
-- [ ] Methods will return a string saying how that animal implements the action
-  - [ ] All animals can move, breath, reproduce. How they do that, so what string should get returned when the method is executed, varies by animal type.
+- [x] Methods will return a string saying how that animal implements the action
+  - [x] All animals can move, breath, reproduce. How they do that, so what string should get returned when the method is executed, varies by animal type.
 
-* [ ] Create classes for mammals, birds, fish
-  * [ ] Mammals move - walk, breath - lungs, reproduce - live births
-  * [ ] Birds move - fly, breath - lungs, reproduce - eggs
-  * [ ] Fish move - swim, breath - gills, reproduce - eggs
+* [x] Create classes for mammals, birds, fish
+  * [x] Mammals move - walk, breath - lungs, reproduce - live births
+  * [x] Birds move - fly, breath - lungs, reproduce - eggs
+  * [x] Fish move - swim, breath - gills, reproduce - eggs
 
 Hint: think about abstract classes and creating an ArrayList using an abstract class type.
 
 Create a collection for the animals using the following data
 
-* [ ] **Mammals:**
+* [x] **Mammals:**
 
     | Name      | Year Named |
     |-----------|-------|
@@ -40,7 +40,7 @@ Create a collection for the animals using the following data
     | Raccoon   | 1758  |
     | Bigfoot   | 2021  |
 
-* [ ] **Birds:**
+* [x] **Birds:**
 
     | Name      | Year Named |
     |-----------|------|
@@ -50,7 +50,7 @@ Create a collection for the animals using the following data
     | Parrot    | 1824 |
     | Swan      | 1758 |
 
-* [ ] **Fish:**
+* [x] **Fish:**
 
     | Name      | Year Named |
     |-----------|------|
@@ -59,16 +59,16 @@ Create a collection for the animals using the following data
     | Perch     | 1758 |
 
 * Using Lambda Expressions and displaying the results to the console
-  * [ ] List all the animals in descending order by year named
-  * [ ] List all the animals alphabetically
-  * [ ] List all the animals order by how they move
-  * [ ] List only those animals the breath with lungs
-  * [ ] List only those animals that breath with lungs and were named in 1758
-  * [ ] List only those animals that lay eggs and breath with lungs
-  * [ ] List alphabetically only those animals that were named in 1758
+  * [x] List all the animals in descending order by year named
+  * [x] List all the animals alphabetically
+  * [x] List all the animals order by how they move
+  * [x] List only those animals the breath with lungs
+  * [x] List only those animals that breath with lungs and were named in 1758
+  * [x] List only those animals that lay eggs and breath with lungs
+  * [x] List alphabetically only those animals that were named in 1758
 
 * Stretch Goal
-  * [ ] For the list of animals, list alphabetically those animals that are mammals.
+  * [x] For the list of animals, list alphabetically those animals that are mammals.
 
 ## Results
 
@@ -188,39 +188,41 @@ Zebra live births walk lungs 1778
 
 ### Algorithm
 #### MVP
-- [ ] Create abstract class for animals
-  - [ ] Define fields
-  - [ ] Define constructor
-  - [ ] Define abstract method
-- [ ] Create interface for behavior
-  - [ ] Declare methods:
-    - [ ] move
-    - [ ] breath
-    - [ ] reproduce
-  - [ ] Create classes for animal categories
-  - [ ] Customize interface methods
-  - [ ] Define custom toString() method
-    - [ ] Mammals
-    - [ ] Birds
-    - [ ] Fish
-  - [ ] Automate/streamline creation of classes and subclasses
+### Algorithm
+#### MVP
+- [x] Create abstract class for animals
+  - [x] Define fields
+  - [x] Define constructor
+  - [x] Define abstract method
+- [x] Create interface for behavior
+  - [x] Declare methods:
+    - [x] move
+    - [x] breath
+    - [x] reproduce
+  - [x] Create classes for animal categories
+  - [x] Customize interface methods
+  - [x] Define custom toString() method
+    - [x] Mammals
+    - [x] Birds
+    - [x] Fish
+  - [x] Instantiate animals
+  - [x] Add animals to ArrayList
 
 ##### Sorting and Filtering
-- [ ] Create a sorting method
-  - [ ] Uses lambda expression as an argument
+ - [x] Uses lambda expression as an argument
   - Lambda expression criteria:
-    - [ ] year named (descending)
-    - [ ] alphabetically
-    - [ ] movement
-  - [ ] Create a filtering method
-    - [ ] Uses lambda expression as an argument
+    - [x] year named (descending)
+    - [x] alphabetically
+    - [x] movement
+  - [x] Create a filtering method
+    - [x] Uses lambda expression as an argument
     - Lambda expression criteria:
-      - [ ] breath with lungs
-      - [ ] breath with lungs named in 1758
-      - [ ] lay eggs and breath with lungs
-  - [ ] Implement filtering and sorting
-      - [ ] alphabetically named in 1758
+      - [x] breath with lungs
+      - [x] breath with lungs named in 1758
+      - [x] lay eggs and breath with lungs
+  - [x] Implement filtering and sorting
+      - [x] alphabetically named in 1758
 
 #### Stretch (Optional)
-- [ ] Implement filtering and sorting
-    - [ ] filter mammals sorted alphabetically
+- [x] Implement filtering and sorting
+    - [x] filter mammals sorted alphabetically

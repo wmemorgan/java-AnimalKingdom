@@ -97,8 +97,18 @@ public class Main {
         filteredList.forEach((a) -> System.out
                 .println(a.name + " " + a.reproduce() + " " + a.move() + " " + a.breath() + " " + a.year));
 
+        //===== Filter and Sort =====//
         System.out.println("\n*** List alphabetically animals that were named in 1758 ***");
         filterAnimals(animals, a -> a.getYear() == 1758);
+        filteredList.sort((a1, a2) -> a1.name.compareToIgnoreCase(a2.name));
+        filteredList.forEach((a) -> System.out
+                .println(a.name + " " + a.reproduce() + " " + a.move() + " " + a.breath() + " " + a.year));
+
+
+        // Stretch Goal
+        System.out.println("\n*** Stretch Goal ***");
+        System.out.println("\n*** For the list of animals, list alphabetically those animals that are mammals ***");        
+        filterAnimals(animals, a -> a instanceof Mammal);
         filteredList.sort((a1, a2) -> a1.name.compareToIgnoreCase(a2.name));
         filteredList.forEach((a) -> System.out
                 .println(a.name + " " + a.reproduce() + " " + a.move() + " " + a.breath() + " " + a.year));

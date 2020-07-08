@@ -75,5 +75,30 @@ public class Main {
         System.out.print(animals);
         System.out.println();
 
+        // Filter list
+        System.out.println("\n*** List only those animals the breath with lungs ***");
+        filterAnimal(animals, a -> a.breath().equals("lungs"));
+        filteredList.forEach(a -> System.out.println(
+                a.getName() + " " + a.reproduce() + " " + a.move() + " " + a.breath() + " " + a.getyearNamed()));
+        System.out.println();
+
+        System.out.println("\n*** List only those animals that breath with lungs and were named in 1758 ***");
+        filterAnimal(animals, a -> (a.breath().equals("lungs")) && (a.getyearNamed() == 1758));
+        filteredList.forEach(a -> System.out.println(
+                a.getName() + " " + a.reproduce() + " " + a.move() + " " + a.breath() + " " + a.getyearNamed()));
+        System.out.println();
+
+        System.out.println("\n*** List only those animals that lay eggs and breath with lungs ***");
+        filterAnimal(animals, a -> (a.breath().equals("lungs")) && (a.reproduce().equals("eggs")));
+        filteredList.forEach(a -> System.out.println(
+                a.getName() + " " + a.reproduce() + " " + a.move() + " " + a.breath() + " " + a.getyearNamed()));
+        System.out.println();
+
+        System.out.println("\n*** List alphabetically only those animals that were named in 1758 ***");
+        filterAnimal(animals, a -> a.getyearNamed() == 1758);
+        filteredList.sort((a1, a2) -> a1.getName().compareTo(a2.getName()));
+        filteredList.forEach(a -> System.out.println(
+                a.getName() + " " + a.reproduce() + " " + a.move() + " " + a.breath() + " " + a.getyearNamed()));
+        System.out.println();
     }
 }

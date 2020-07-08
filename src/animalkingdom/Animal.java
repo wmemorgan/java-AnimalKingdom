@@ -4,13 +4,13 @@ abstract class Animal {
     private static int maxId;
     protected int id;
     protected String name;
-    protected int yearDiscovered;
+    protected int yearNamed;
 
-    public Animal(String name, int yearDiscovered) {
+    public Animal(String name, int yearNamed) {
         maxId++;
         id = maxId;
         this.name = name;
-        this.yearDiscovered = yearDiscovered;
+        this.yearNamed = yearNamed;
     }
 
     public int getId() {
@@ -25,12 +25,12 @@ abstract class Animal {
         this.name = name;
     }
 
-    public int getYearDiscovered() {
-        return yearDiscovered;
+    public int getyearNamed() {
+        return yearNamed;
     }
 
-    public void setYearDiscovered(int yearDiscovered) {
-        this.yearDiscovered = yearDiscovered;
+    public void setyearNamed(int yearNamed) {
+        this.yearNamed = yearNamed;
     }
 
     String eat() {
@@ -45,8 +45,13 @@ abstract class Animal {
 
     @Override
     public String toString() {
-        return "id: " + id + ", name: " + name + ", Year Named: " + yearDiscovered;
+        return "Animals{id=" + id + ", name=" + name + ", yearNamed=" + yearNamed + "}";
     }
+
+    // @Override
+    // public String toString() {
+    //     return "id: " + id + ", name: " + name + ", Year Named: " + yearNamed;
+    // }
     
     
 }

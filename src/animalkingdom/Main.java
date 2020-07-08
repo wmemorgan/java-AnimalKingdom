@@ -16,6 +16,7 @@ public class Main {
             }
         }
     }
+
     public static void main(String[] args) {
         System.out.println("\n*** Welcome to Cafe Morgan's Animal Kingdom ***\n");
 
@@ -27,9 +28,6 @@ public class Main {
         Mammal armadillo = new Mammal("Armadillo", 1758);
         Mammal racoon = new Mammal("Racoon", 1758);
         Mammal bigfoot = new Mammal("Bigfoot", 2021);
-        System.out.println(panda.getId() + " " + panda.getName() + " " + panda.move() + " " + panda.breath() + " "
-                + panda.reproduce());
-        System.out.println(zebra);
 
         // Create Birds
         Bird pigeon = new Bird("Pigeon", 1837);
@@ -37,17 +35,11 @@ public class Main {
         Bird toucan = new Bird("Toucan", 1758);
         Bird parrot = new Bird("Parrot", 1824);
         Bird swan = new Bird("Swan", 1758);
-        System.out.println(pigeon.getId() + " " + pigeon.getName() + " " + pigeon.move() + " " + pigeon.breath() + " "
-                + pigeon.reproduce());
-        System.out.println(peacock);
-        
+
         // Create Fish
         Fish salmon = new Fish("Salmon", 1785);
         Fish catfish = new Fish("Catfish", 1817);
         Fish perch = new Fish("Perch", 1758);
-        System.out.println(salmon.getId() + " " + salmon.getName() + " " + salmon.move() + " " + salmon.breath() + " "
-                + salmon.reproduce());
-        System.out.println(catfish);
 
         // Create animal list
         List<Animal> animals = new ArrayList<>();
@@ -67,7 +59,21 @@ public class Main {
         animals.add(catfish);
         animals.add(perch);
 
-        System.out.println("\n**** List of all animals ****");
+        // Sort list
+        System.out.println("\n*** List all the animals in descending order by year named ***");
+        animals.sort((a1, a2) -> a2.getyearNamed() - a1.getyearNamed());
         System.out.print(animals);
+        System.out.println();
+
+        System.out.println("\n*** List all the animals alphabetically ***");
+        animals.sort((a1, a2) -> a1.getName().compareTo(a2.getName()));
+        System.out.print(animals);
+        System.out.println();
+
+        System.out.println("\n*** List all the animals order by how they move ***");
+        animals.sort((a1, a2) -> a1.move().compareTo(a2.move()));
+        System.out.print(animals);
+        System.out.println();
+
     }
 }

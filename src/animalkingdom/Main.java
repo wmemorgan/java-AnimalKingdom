@@ -100,5 +100,12 @@ public class Main {
         filteredList.forEach(a -> System.out.println(
                 a.getName() + " " + a.reproduce() + " " + a.move() + " " + a.breath() + " " + a.getyearNamed()));
         System.out.println();
+
+        System.out.println("\n*** For the list of animals, list alphabetically those animals that are mammals ***");
+        filterAnimal(animals, a -> a instanceof Mammal);
+        filteredList.sort((a1, a2) -> a1.getName().compareTo(a2.getName()));
+        filteredList.forEach(a -> System.out.println(
+                a.getName() + " " + a.reproduce() + " " + a.move() + " " + a.breath() + " " + a.getyearNamed()));
+        System.out.println();
     }
 }
